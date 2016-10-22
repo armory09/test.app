@@ -1,0 +1,174 @@
+﻿<Window x:Class="Me.App.Form.Subform.FrmSelection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="Selection"
+        Width="846.356"
+        Height="599.244"
+        Icon="../../Icons/Steam.ico"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d">
+    <Grid>
+        <StackPanel Margin="5" Orientation="Vertical">
+            <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <GroupBox Header="Selected Leave" HorizontalAlignment="Left" Margin="3">
+                    <StackPanel Orientation="Horizontal" Margin="3" HorizontalAlignment="Center">
+                        <Label Content="Sample" Name="lblLeaveSelect"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>-->
+            <StackPanel HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top"
+                        Orientation="Horizontal">
+                <GroupBox x:Name="groupBox"
+                          Width="806"
+                          Margin="3"
+                          Header="Selection">
+                    <StackPanel Margin="3" Orientation="Vertical">
+                        <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                            <StackPanel Margin="10"
+                                        HorizontalAlignment="Left"
+                                        Orientation="Horizontal">
+                                <Label x:Name="Sample"
+                                       Width="50"
+                                       Content="Search:" />
+                                <TextBox Name="txtSearch"
+                                         Width="150"
+                                         KeyboardNavigation.TabIndex="0"
+                                         TextChanged="txtSearch_TextChanged" />
+                                <Border BorderThickness="5,0,5,0" />
+                                <CheckBox Name="chkApplicant"
+                                          Margin="3,5,3,5"
+                                          Checked="chkApplicant_Checked"
+                                          KeyboardNavigation.TabIndex="1" />
+                                <Label Content="Applicant" />
+                                <Border BorderThickness="5,0,5,0" />
+                                <CheckBox Name="chkApproval"
+                                          Margin="3,5,3,5"
+                                          Checked="chkApproval_Checked"
+                                          KeyboardNavigation.TabIndex="2" />
+                                <Label Content="Approval" />
+                            </StackPanel>
+                        </StackPanel>
+                        <ListView x:Name="EmployeeListView"
+                                  Height="134"
+                                  SelectionChanged="EmployeeListView_SelectionChanged">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Width="50"
+                                                    DisplayMemberBinding="{Binding EmployeeId}"
+                                                    Header="Id" />
+                                    <GridViewColumn Width="110"
+                                                    DisplayMemberBinding="{Binding EmployeeNumber}"
+                                                    Header="Employee Number" />
+                                    <GridViewColumn Width="120"
+                                                    DisplayMemberBinding="{Binding FullName}"
+                                                    Header="Full Name" />
+                                    <GridViewColumn Width="120"
+                                                    DisplayMemberBinding="{Binding Section}"
+                                                    Header="Section" />
+                                    <GridViewColumn Width="150"
+                                                    DisplayMemberBinding="{Binding Department}"
+                                                    Header="Department" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+                <GroupBox x:Name="groupBox1"
+                          Width="820"
+                          Margin="3"
+                          HorizontalAlignment="Left"
+                          Header="Details">
+                    <StackPanel Width="728"
+                                Margin="0,0,0,0"
+                                HorizontalAlignment="Stretch"
+                                Orientation="Vertical">
+                        <GroupBox x:Name="ApplicantBox"
+                                  Margin="3,10,3,5"
+                                  Header="Applicant">
+                            <StackPanel Margin="5,8,5,5" Orientation="Vertical">
+                                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                    <Label Name="Label1"
+                                           Width="75"
+                                           Content="Full Name:" />
+                                    <TextBox Name="txtApplicantFullName"
+                                             Width="300"
+                                             IsReadOnly="True" />
+                                    <Border BorderThickness="5,0,5,0" />
+                                    <Label Name="lblSection"
+                                           Width="50"
+                                           Content="Section:" />
+                                    <TextBox Name="txtApplicantSection"
+                                             Width="263"
+                                             IsReadOnly="True" />
+                                </StackPanel>
+                                <Border BorderThickness="0,5,5,0" />
+                                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                    <Label Name="lblDepartment"
+                                           Width="75"
+                                           Content="Department:" />
+                                    <TextBox Name="txtApplicantDepartment"
+                                             Width="300"
+                                             IsReadOnly="True" />
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox x:Name="groupBox12"
+                                  Height="88"
+                                  Margin="3,5,3,10"
+                                  Header="Approved By">
+                            <StackPanel Margin="5,8,5,5" Orientation="Vertical">
+                                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                    <Label Name="Label11"
+                                           Width="75"
+                                           Content="Full Name:" />
+                                    <TextBox Name="txtApprovalFullName"
+                                             Width="300"
+                                             IsReadOnly="True" />
+                                    <Border BorderThickness="5,0,5,0" />
+                                    <Label Name="lblSection1"
+                                           Width="50"
+                                           Content="Section:" />
+                                    <TextBox Name="txtApprovalSection"
+                                             Width="265"
+                                             IsReadOnly="True" />
+                                </StackPanel>
+                                <Border BorderThickness="0,5,5,0" />
+                                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                    <Label Name="lblDepartment1"
+                                           Width="75"
+                                           Content="Department:" />
+                                    <TextBox Name="txtApprovalDepartment"
+                                             Width="300"
+                                             IsReadOnly="True" />
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        <StackPanel Margin="0,5,0,5"
+                                    HorizontalAlignment="Center"
+                                    Orientation="Horizontal">
+                            <Button Name="btnAccept"
+                                    Width="60"
+                                    Height="30"
+                                    Click="btnAccept_Click"
+                                    Content="Accept"
+                                    KeyboardNavigation.TabIndex="3" />
+                            <Button Name="btnCancel"
+                                    Width="60"
+                                    Height="30"
+                                    Click="btnCancel_Click"
+                                    Content="Cancel"
+                                    KeyboardNavigation.TabIndex="4" />
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>
